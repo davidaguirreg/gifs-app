@@ -2,7 +2,12 @@
   <h3 class="text-light"> Gifs App</h3>
   <hr class="text-light">
   <div class="list-group list-reset">
-    <button type="button" class="list-group-item list-group-item-action my-2" *ngFor="let tag of tagsHistory">
+    <button
+      type="button"
+      class="list-group-item list-group-item-action"
+      *ngFor="let tag of tagsHistory"
+      (click)="searchAgain(tag)"
+      >
       {{tag | titlecase }}
     </button>
   </div>

@@ -11,7 +11,7 @@ import { GifsService } from '../../services/gifs.service';
       id="searchGifs"
       class="form-control"
       placeholder="Buscar gifs..."
-      (keyup.Enter)="searchTag()"
+      (keyup.Enter)="search()"
       #txtSearch
       >
   `
@@ -27,9 +27,8 @@ export class SearchComponent {
   ) { }
 
 
-  searchTag() {
-    this.gifsService._tagsHistory.push(this.textSearch.nativeElement.value);
+  search() {
+    this.gifsService.searchTag(this.textSearch.nativeElement.value);
     this.textSearch.nativeElement.value = '';
-
   }
 }
